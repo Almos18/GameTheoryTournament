@@ -14,7 +14,6 @@ class Tournament:
             p2 = x
             print(p1, p2)
 
-
     def tit_for_tat(self, x):
 
         if x == 0:
