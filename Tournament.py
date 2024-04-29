@@ -20,7 +20,6 @@ class Tournament:
             self.calculate_points(p1, p2)
 
 
-
     def calculate_points(self, p1, p2):
             global p1points
             global p2points
