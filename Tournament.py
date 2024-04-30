@@ -24,6 +24,7 @@ class Tournament:
             global p1points
             global p2points
 
+
             if p1 == 0 & p2 == 0:
                 p1points += 1
                 p2points += 1
