@@ -12,15 +12,34 @@ class Tournament:
         amount_of_rounds = 10
         for y in range(amount_of_rounds):
             x = self.tit_for_tat(x)
+            x = self.potentially_mutate(x)
             player1 = x
             x = self.random_answer()
+            x = self.potentially_mutate(x)
             player2 = x
+
+
             print(player1, player2)
 
             self.calculate_points(player1, player2)
             #print(self.p1points, self.p2points)
 
         print(self.p1points, self.p2points)
+
+
+    def potentially_mutate(self, x):
+
+        rand = random.randint(0, 10)
+
+        if rand == 0 and x == 0:
+            x = 1
+            print("mutate 1")
+
+        if rand == 0 and x == 1:
+            x = 0
+            print("mutate 0")
+
+        return x
 
     def calculate_points(self, p1, p2):
 
