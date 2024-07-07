@@ -1,6 +1,5 @@
 import random
 
-
 class Tournament:
     p1points = 0
     p2points = 0
@@ -14,10 +13,9 @@ class Tournament:
             x = self.tit_for_tat(x)
             x = self.potentially_mutate(x)
             player1 = x
-            x = self.random_answer()
+            x = self.scout(y)
             x = self.potentially_mutate(x)
             player2 = x
-
 
             print(player1, player2)
 
@@ -29,7 +27,7 @@ class Tournament:
 
     def potentially_mutate(self, x):
 
-        rand = random.randint(0, 10)
+        rand = random.randint(0, 20)
 
         if rand == 0 and x == 0:
             x = 1
@@ -40,6 +38,7 @@ class Tournament:
             print("mutate 0")
 
         return x
+
 
     def calculate_points(self, p1, p2):
 
@@ -59,6 +58,7 @@ class Tournament:
 
         print(self.p1points, self.p2points)
 
+
     def tit_for_tat(self, x):
 
         if x == 0:
@@ -70,9 +70,35 @@ class Tournament:
         if x == 2:
             return 1
 
+    def tat_for_tit(self, x):
+
+        if x == 0:
+            return 1
+
+        if x == 1:
+            return 0
+
+        if x == 2:
+            return 0
+
+
+    def always_defect(self):
+        return 0
+
+
+    def always_cooperate(self):
+        return 1
+
+
     def random_answer(self):
         return random.randint(0, 1)
 
+
+    def scout(self, y):
+
+        if (y/5).is_integer():
+            return 0
+        return 1
 
 try1 = Tournament()
 
