@@ -23,6 +23,7 @@ class Tournament:
             #print(self.p1points, self.p2points)
 
         print(self.p1points, self.p2points)
+        self.write_to_file(self.p1points, self.p2points)
 
 
     def potentially_mutate(self, x):
@@ -39,6 +40,11 @@ class Tournament:
 
         return x
 
+
+    def write_to_file(self, x, y):
+        o = open("results.txt", "a")
+        o.write("\n" + str(x) + " " + str(y))
+        o.close()
 
     def calculate_points(self, p1, p2):
 
