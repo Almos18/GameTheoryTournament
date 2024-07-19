@@ -26,6 +26,7 @@ class Tournament:
         self.write_to_file(self.p1points, self.p2points)
 
 
+
     def potentially_mutate(self, x):
 
         rand = random.randint(0, 20)
